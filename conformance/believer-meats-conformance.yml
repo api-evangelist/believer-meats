@@ -1,0 +1,104 @@
+generated: '2026-08-06'
+method: searched
+source: >-
+  FDA/USDA regulatory coverage of Believer Meats and live probes of believermeats.com
+  (2026-08-06 web search + curl)
+scope: >-
+  Believer Meats published no API, so there are no API or cross-cutting technical
+  standards to assert. What it was actually measured against is the US regulatory
+  pathway for cell-cultivated meat and poultry, which it completed in 2025 - and
+  which it then could not commercialize, because the company ceased operations in
+  December 2025. That pathway is recorded here as the applicable regime. The
+  API/protocol standards block below is recorded as not-applicable rather than
+  false, so this file is never mistaken for a compliance posture the company did
+  not claim.
+company_status:
+  operating: false
+  ceased: '2025-12'
+  evidence: >-
+    Shutdown announced to staff on 2025-12-01 and disclosed publicly by the
+    company's global VP of talent and HR; widely reported (FoodBev, MEAT+POULTRY,
+    AgFunderNews, Times of Israel, Calcalist, Fast Company, Wilson Times). The
+    Wilson, North Carolina plant closed and the contractor that built it filed suit
+    over a reported USD 34 million unpaid balance. believermeats.com remains online
+    but has not been republished since 2025-10-12 (Webflow "Last Published" comment).
+regulatory_regime:
+- id: fda-cell-cultured-food-premarket-consultation
+  name: >-
+    US FDA premarket consultation for food made from cultured animal cells
+    (FDA/USDA 2019 joint framework)
+  conforms: true
+  status: granted
+  evidence: >-
+    FDA issued a "No Questions" letter for Believer Meats' cultivated chicken in
+    2025, accepting that the cultivation process, inputs and finished product raised
+    no safety concerns. Believer was reported as the fifth cultivated-meat company
+    to clear the FDA step.
+- id: usda-fsis-label-and-facility-approval
+  name: USDA FSIS label approval and grant of inspection for cell-cultivated poultry
+  conforms: true
+  status: granted
+  evidence: >-
+    USDA cleared Believer Meats' cultivated chicken label and its Wilson, North
+    Carolina production facility for operation, completing the second half of the
+    US pathway and positioning the company to begin commercial sales.
+  note: >-
+    Approval was achieved but never exercised - the company ceased operations before
+    commercial sale.
+api_standards:
+- id: openapi
+  conforms: false
+  applicable: false
+  evidence: >-
+    no public API contract published (see well-known/believer-meats-well-known.yml);
+    /openapi.json, /openapi.yaml and /swagger.json all 404
+- id: asyncapi
+  conforms: false
+  applicable: false
+- id: graphql
+  conforms: false
+  applicable: false
+  evidence: /graphql returns 404; no API host resolves
+- id: oauth2
+  conforms: false
+  applicable: false
+- id: openid-connect
+  conforms: false
+  applicable: false
+  evidence: /.well-known/openid-configuration returns 404
+- id: rfc9457-problem-details
+  conforms: false
+  applicable: false
+- id: mcp
+  conforms: false
+  applicable: false
+- id: a2a
+  conforms: false
+  applicable: false
+  evidence: >-
+    /.well-known/agent-card.json and /.well-known/agent.json both 404 on
+    www.believermeats.com and 301 on the apex host
+- id: rfc9116-security-txt
+  conforms: false
+  applicable: true
+  evidence: /.well-known/security.txt returns 404 on www.believermeats.com
+- id: rfc8615-well-known-uris
+  conforms: false
+  applicable: true
+  evidence: >-
+    the Webflow origin answers every /.well-known/* path with a 404 body reading
+    "Invalid .well-known request"
+information_security_compliance:
+  found: false
+  note: >-
+    No trust center, SOC 2, ISO 27001, PCI or equivalent information-security
+    certification page was found by probe-security-programs.py (vdp=none trust=none)
+    or by search. No `Compliance` and no `TrustCenter` pointer is wired in apis.yml.
+    The FDA/USDA clearances above are food-safety approvals, not a published
+    information-security compliance program, so they do not earn one either.
+domain_security_observed:
+  source: security/believer-meats-domain-security.yml
+  summary: >-
+    www.believermeats.com serves TLS 1.3 with HSTS (max-age 31536000, one year) and
+    the believermeats.com domain publishes SPF and DMARC records; DMARC policy is
+    p=none (monitor only), DNSSEC is not enabled and no CAA record is published.

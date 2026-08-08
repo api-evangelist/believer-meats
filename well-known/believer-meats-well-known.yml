@@ -1,0 +1,95 @@
+generated: '2026-08-06'
+method: probed
+source: live probes of /.well-known/ and contract-discovery paths on Believer Meats hosts
+result: >-
+  none - no /.well-known/ document and no machine-readable API contract is published
+  on any Believer Meats host. believermeats.com is a Webflow-hosted marketing site
+  (HTML comment "Last Published: Sun Oct 12 2025"); there is no API host, no docs
+  host and no developer portal to probe. The company ceased operations in December
+  2025, so this is a terminal negative result rather than a snapshot of work in
+  progress.
+hosts:
+- host: https://www.believermeats.com
+  platform: Webflow
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    note: >-
+      Webflow platform 404 - body is the literal HTML "Invalid .well-known request",
+      i.e. a genuine origin miss, not the site's styled 404 page
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /openapi.json
+    status: 404
+  - path: /openapi.yaml
+    status: 404
+  - path: /swagger.json
+    status: 404
+  - path: /api-docs
+    status: 404
+  - path: /docs
+    status: 404
+  - path: /developers
+    status: 404
+  - path: /api
+    status: 404
+  - path: /graphql
+    status: 404
+  - path: /robots.txt
+    status: 200
+    note: >-
+      Webflow-generated robots.txt. Disallows CMS scaffolding paths only
+      (/dev-categories/, /dev-tags/, /subcategory/ and similar). No API path is
+      referenced and no AI-crawler block list is present.
+  - path: /sitemap.xml
+    status: 200
+    note: >-
+      21 URLs, all marketing or press-release pages (/our-meat, /our-vision,
+      /foodservice, /careers, /contact, /press/*, /privacy-policy, /terms-of-use).
+      No developer, docs, API or status page appears anywhere in the sitemap.
+- host: https://believermeats.com
+  note: >-
+    apex host 301-redirects every path to the www host (verified on
+    /.well-known/security.txt, /.well-known/agent-card.json, /.well-known/agent.json,
+    /llms.txt and /openapi.json)
+hosts_that_do_not_resolve:
+- api.believermeats.com
+- app.believermeats.com
+- developers.believermeats.com
+- docs.believermeats.com
+- portal.believermeats.com
+contract_discovery:
+  openapi: >-
+    not found - /openapi.json, /openapi.yaml, /swagger.json, /api-docs, /docs and
+    /api all 404 on the only host that exists, and no API host resolves
+  graphql: >-
+    not applicable - /graphql 404s and no API host exists to introspect
+  mcp: not found - no hosted MCP server, no mcp. subdomain, nothing in the sitemap
+  a2a_agent_card: >-
+    not found - both /.well-known/agent-card.json and the legacy
+    /.well-known/agent.json return 404 (Webflow "Invalid .well-known request") on
+    the www host and 301 on the apex. No a2a/ artifact is written.
+  github: >-
+    no organization under github.com/believer-meats or github.com/believermeats
+    (both 404 via the GitHub API). github.com/futuremeat exists but is empty - zero
+    public repositories, no name, no blog, no description - so it cannot be
+    attributed to Future Meat Technologies and is not recorded as a company property.
+  conclusion: >-
+    Believer Meats published no machine-readable API contract of any kind. This is a
+    completed negative result.
+x-evidence:
+  fetched: '2026-08-06'
+  method: curl GET with redirect-following, 20s timeout, apex and www hosts
+  dns_method: dig +short A on candidate API/docs/app/portal subdomains

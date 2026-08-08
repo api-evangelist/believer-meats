@@ -1,0 +1,50 @@
+# Believer Meats
+
+> Believer Meats was a cultivated-meat company founded in 2018 in Rehovot, Israel as Future Meat Technologies by Hebrew University bioengineer Yaakov Nahmias, rebranded to Believer Meats in November 2022 and later headquartered in the United States under CEO Gustavo Burger. It grew chicken, lamb and beef from animal cells in a continuous fermentation process instead of raising and slaughtering animals.
+
+**Believer Meats ceased operations in December 2025.** Staff were told on 1 December 2025 that the company was closing and laying everyone off, after its largest investor withdrew; the shutdown was disclosed publicly by the company's global VP of talent and HR and widely reported. Its Wilson, North Carolina plant closed and the contractor that built it sued over a reported USD 34 million unpaid balance. Anything written here in the past tense is deliberate.
+
+Believer Meats was a food-biotechnology and manufacturing business, not a software vendor. As of 2026-08-06 it publishes **no public API, no developer portal, no API documentation, no SDKs and no machine-readable API contract**. Its web presence is a Webflow marketing site last republished on 2025-10-12 — an archive of a company that no longer operates. Do not assume or invent an `api.believermeats.com`, `docs.believermeats.com`, `developers.believermeats.com` or `app.believermeats.com` endpoint — none of those hosts resolve.
+
+## Company
+
+- [Believer Meats](https://www.believermeats.com/): company website (marketing site, no longer maintained)
+- [Our Vision](https://www.believermeats.com/our-vision): the company's own statement of technology, economics and investors
+- [Our Meat](https://www.believermeats.com/our-meat): product overview
+- [Foodservice](https://www.believermeats.com/foodservice): the channel it was preparing to sell into
+- [Press](https://www.believermeats.com/press): press-release archive, from the 2019 Series A through the 2024 GEA partnership
+- [Wikipedia: Believer Meats](https://en.wikipedia.org/wiki/Believer_Meats): independent company overview
+- [Crunchbase: Future Meat Technologies / Believer Meats](https://www.crunchbase.com/organization/future-meat-technologies): funding and company profile
+
+## Technology and facilities
+
+Animal cells were collected once and grown continuously in fermenters without genetic modification, producing edible tissue at yields the company claimed were about ten times industrial standards, with the aim of reaching cost parity with conventional meat. A 10,700 sq ft pilot facility opened in Rehovot, Israel in June 2021. A 200,000 sq ft plant in Wilson, North Carolina — billed as the largest cultivated-meat production facility in the world, designed for at least 10,000 metric tonnes of cell-cultured meat annually — was completed in 2025 and closed the same year.
+
+## Funding
+
+Roughly USD 390 million raised in total: a USD 14 million Series A in October 2019 and a USD 347 million Series B in 2021, at the time the largest investment ever made in cultivated meat. Investors included Tyson Foods, ADM, Emerald Technology Ventures, Bits x Bites, Cibus Fund and Menora Mivtachim. Believer also partnered with GEA Group in 2024 on production scale-up and with the Bezos Earth Fund on the Bezos Center for Sustainable Protein.
+
+## Regulatory status
+
+Believer Meats received an FDA "No Questions" letter for its cultivated chicken in 2025, followed by USDA label approval and clearance of the Wilson facility — completing the full US pathway to commercial sale weeks before it shut down. See `conformance/believer-meats-conformance.yml` in this repo for the recorded regime and evidence.
+
+## Contact and social
+
+- [Contact](https://www.believermeats.com/contact)
+- [LinkedIn](https://www.linkedin.com/company/believer-meats/)
+- [Instagram](https://www.instagram.com/believermeats/)
+- [Facebook](https://www.facebook.com/believermeats)
+- [X / Twitter](https://twitter.com/believermeats)
+- [YouTube](https://www.youtube.com/@believermeats)
+
+## Code and packages
+
+- No GitHub organization exists under `believer-meats` or `believermeats` (both 404 via the GitHub API). `github.com/futuremeat` exists but is empty — zero public repositories, no name, no description — so it is not attributed to the company.
+- No packages are published on npm, PyPI, RubyGems or crates.io. See `packages/believer-meats-packages.yml`.
+
+## What this repo contains
+
+- `well-known/believer-meats-well-known.yml`: the full `/.well-known/` and contract-discovery probe record (all misses, recorded with status codes)
+- `packages/believer-meats-packages.yml`: registry search record (no first-party packages)
+- `conformance/believer-meats-conformance.yml`: the FDA/USDA cell-cultivated meat pathway; API standards recorded as not-applicable
+- `security/believer-meats-domain-security.yml`: TLS/HSTS/DNSSEC/CAA/SPF/DMARC probe of believermeats.com

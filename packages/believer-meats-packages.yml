@@ -1,0 +1,40 @@
+generated: '2026-08-06'
+method: searched
+source: registry searches of npm, PyPI, RubyGems, crates.io and GitHub (2026-08-06)
+result: none
+notes: >-
+  Believer Meats published no client SDK, because it published no public API. It was
+  a cultivated-meat manufacturer, not a software vendor, and it ceased operations in
+  December 2025. Every registry query below returned zero results or unrelated fuzzy
+  matches on the string "believer". No `SDKs` pointer is wired in apis.yml and the
+  sdk_count checks are correctly left unearned.
+packages: []
+registries_checked:
+- registry: npm
+  query: believermeats, futuremeat
+  result: 0 packages under either spelling
+- registry: npm
+  query: believer / believer-meats
+  result: >-
+    59-79 fuzzy matches, none first-party - the top hits are the unrelated generic
+    `believer` package and the `@bleed-believer/*` scope. No @believermeats scope
+    exists.
+- registry: pypi
+  query: believer-meats, believermeats
+  result: 404 - no project under either spelling
+- registry: rubygems
+  query: believermeats
+  result: 0 results
+- registry: crates.io
+  query: believermeats
+  result: 0 results
+- registry: github
+  query: orgs/believer-meats, orgs/believermeats
+  result: 404 - neither organization exists
+- registry: github
+  query: orgs/futuremeat
+  result: >-
+    organization exists (created 2022-07-25) but is empty - 0 public repositories,
+    no display name, no blog URL, no description. Nothing links it to Future Meat
+    Technologies, so it is not recorded as a company property and no packages are
+    claimed from it.
