@@ -17,6 +17,17 @@ description: 'Believer Meats is a cultivated-meat company founded in 2018 in Reh
   site — last republished in October 2025 — now stands as an archive of a company that
   is no longer operating.'
 url: https://raw.githubusercontent.com/api-evangelist/believer-meats/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://cdn.prod.website-files.com/63ee4332e44d47c6773113dd/64e7bd51154578197b5d0a59_Believer%20Site%20opengraph.webp
 x-type: company
 x-source: harvest:secondary-market
