@@ -16,6 +16,7 @@ description: 'Believer Meats is a cultivated-meat company founded in 2018 in Reh
   documentation, no SDKs and no machine-readable API contract, and its Webflow marketing
   site — last republished in October 2025 — now stands as an archive of a company that
   is no longer operating.'
+x-status: defunct
 url: https://raw.githubusercontent.com/api-evangelist/believer-meats/refs/heads/main/apis.yml
 deliveryModel:
   model: saas
@@ -58,6 +59,7 @@ tags:
 - Manufacturing
 - United States
 - Israel
+- Defunct
 apis: []
 maintainers:
 - FN: Kin Lane
